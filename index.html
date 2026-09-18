@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    
+    <!-- BRZINA UČITAVANJA (PRECONNECT) -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- GOOGLE SEO META TAGOVI -->
+    <title>LET'S GO Negotin | Najbolja brza hrana i doručak u Negotinu</title>
+    <meta name="description" content="Naručite doručak i premium sendviče u Negotinu. Domaće lepinje, dinstana svinjska plećka, cepkana piletina i pomfrit. Pozovite 061 152 7047 ili pogledajte meni.">
+    <meta name="keywords" content="Let's Go Negotin, brza hrana Negotin, doručak Negotin, lepinja Negotin, sendviči Negotin, pomfrit, fast food Negotin">
+    <meta name="author" content="LET'S GO Negotin">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://letsgo-negotin-menu.netlify.app/">
+    
+    <!-- WEB APP OPTIMIZACIJA (EFEKAT APLIKACIJE NA TELEFONU) -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="LET'S GO">
+    <meta name="theme-color" content="#0a0a0a">
+    
+    <!-- OPEN GRAPH (PADAJUĆI PREVIEW SA LOGOM NA VIBER / WHATSAPP / IG) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="LET'S GO Negotin | Premium Street Food & Jelovnik">
+    <meta property="og:description" content="Domaće lepinje, dinstana plećka, cepkani pileći sendviči i omleti u Negotinu. Pogledajte kompletan jelovnik i cene.">
+    <meta property="og:url" content="https://letsgo-negotin-menu.netlify.app/">
+    <meta property="og:site_name" content="LET'S GO Negotin">
+    <meta property="og:image" content="https://letsgo-negotin-menu.netlify.app/logo.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- GOOGLE SCHEMA.ORG STRUCTURAL DATA (LOKALNI BIZNIS + MENI ZA PRETRAGU) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FastFoodRestaurant",
+      "name": "LET'S GO Negotin",
+      "image": "https://letsgo-negotin-menu.netlify.app/logo.png",
+      "@id": "https://letsgo-negotin-menu.netlify.app/",
+      "url": "https://letsgo-negotin-menu.netlify.app/",
+      "telephone": "+381611527047",
+      "priceRange": "RSD",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Ivo Lole Ribara 5",
+        "addressLocality": "Negotin",
+        "postalCode": "19300",
+        "addressCountry": "RS"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 44.2250,
+        "longitude": 22.5310
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "16:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "08:00",
+          "closes": "15:00"
+        }
+      ],
+      "servesCuisine": ["Street Food", "Sandwiches", "Breakfast"],
+      "hasMenu": {
+        "@type": "Menu",
+        "name": "Glavni Meni",
+        "hasMenuSection": [
+          {
+            "@type": "MenuSection",
+            "name": "Specijaliteti",
+            "hasMenuItem": [
+              {
+                "@type": "MenuItem",
+                "name": "PLEĆKA",
+                "description": "Dinstana svinjska plećka u belom vinu (150g), kačkavalj, hrskavi luk, kupus salata, kiseli krastavac",
+                "offers": { "@type": "Offer", "price": "450", "priceCurrency": "RSD" }
+              },
+              {
+                "@type": "MenuItem",
+                "name": "PILEĆI",
+                "description": "Sočna cepkana piletina (150g), LG sos, kačkavalj, kupus salata, hrskavi luk, kiseli krastavac",
+                "offers": { "@type": "Offer", "price": "400", "priceCurrency": "RSD" }
+              }
+            ]
+          }
+        ]
+      }
+    }
+    </script>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #0a0a0a; --card: #121212; --text: #ffffff; --textDim: #9ca3af;
+            --border: #2a2a2a; --gold: #F59E0B; --btnBg: rgba(255,255,255,0.08);
+        }
+        body.light {
+            --bg: #f8f9fa; --card: #ffffff; --text: #1a1a2e; --textDim: #6c757d;
+            --border: #e9ecef; --btnBg: rgba(0,0,0,0.05);
+        }
+        body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; transition: all 0.25s ease; -webkit-tap-highlight-color: transparent; }
+        .card { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 18px; transition: transform 0.15s; }
+        .card:active { transform: scale(0.99); }
+        .price { color: var(--gold); font-weight: 800; font-size: 1.25rem; }
+        .brand { font-size: 2.2rem; font-weight: 900; background: linear-gradient(135deg, var(--text) 0%, var(--textDim) 80%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .status-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+        .status-open { background: #10b981; box-shadow: 0 0 8px #10b981; animation: pulse 1.5s infinite; }
+        .status-closed { background: #ef4444; }
+        @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.5; } }
+        .lang-btn { background: var(--card); border: 1px solid var(--border); color: var(--textDim); padding: 6px 14px; border-radius: 40px; font-weight: 700; font-size: 0.75rem; cursor: pointer; flex-shrink: 0; }
+        .lang-btn.active { background: var(--gold); color: #000; border-color: var(--gold); }
+        .tab-btn { background: transparent; border: none; padding: 6px 16px; border-radius: 40px; font-weight: 700; font-size: 0.7rem; color: var(--textDim); cursor: pointer; white-space: nowrap; flex-shrink: 0; }
+        .tab-btn.active { background: var(--gold); color: #000; }
+        .badge { font-size: 0.6rem; font-weight: 700; padding: 3px 8px; border-radius: 20px; margin-left: 8px; display: inline-block; vertical-align: middle; }
+        .badge-rec { background: var(--gold); color: #000; }
+        .badge-vege { background: #10b981; color: #fff; }
+        .review-btn { 
+            background: linear-gradient(135deg, #F59E0B 0%, #FCD34D 50%, #F59E0B 100%);
+            background-size: 200% 200%;
+            animation: shimmer 3s ease infinite;
+            border: none;
+            border-radius: 20px;
+            padding: 22px 28px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: #000;
+            font-weight: 900;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(245, 158, 11, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        @keyframes shimmer { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+        .review-stars { font-size: 1.6rem; letter-spacing: 5px; }
+        .blink-arrow { animation: bounce 1.2s infinite; color: var(--gold); font-size: 1.8rem; display: inline-block; }
+        @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(10px); } }
+        .theme-btn { position: fixed; bottom: 20px; left: 20px; width: 50px; height: 50px; border-radius: 50%; background: var(--card); border: 1px solid var(--border); z-index: 100; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+        .category-panel { display: none; animation: fade 0.2s; }
+        .category-panel.active { display: block; }
+        @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+        .toast { position: fixed; bottom: 90px; left: 50%; transform: translateX(-50%); background: var(--gold); color: #000; padding: 8px 20px; border-radius: 40px; font-weight: 700; opacity: 0; transition: opacity 0.2s; z-index: 200; pointer-events: none; }
+        .toast.show { opacity: 1; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .sticky-nav-group { position: sticky; top: 0; z-index: 50; background: var(--bg); border-bottom: 1px solid var(--border); }
+        .logo-img { max-width: 150px; height: auto; margin: 0 auto; display: block; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4)); }
+    </style>
+</head>
+<body>
+
+<button class="theme-btn" onclick="toggleTheme()" aria-label="Promeni temu"><i class="fas fa-moon" id="themeIcon"></i></button>
+
+<header class="pt-6 pb-6 text-center px-5">
+    <button onclick="shareMenu()" class="absolute top-5 right-5 w-10 h-10 rounded-full flex items-center justify-center" style="background: var(--btnBg)" aria-label="Podeli meni">
+        <i class="fas fa-share-alt text-sm"></i>
+    </button>
+
+    <!-- LOGO LET'S GO -->
+    <div class="mb-3">
+        <img src="logo.png" alt="LET'S GO Negotin Logo" class="logo-img">
+    </div>
+
+    <div class="flex items-center justify-center gap-2 mb-3">
+        <span id="statusDot" class="status-dot"></span>
+        <span id="statusText" class="text-[10px] font-black tracking-[0.2em] uppercase"></span>
+    </div>
+    <p class="text-[9px] font-black tracking-[0.2em] uppercase mb-5 opacity-70"><span id="artisanText">DOMAĆE LEPINJE I PREMIUM SENDVIČI</span> • NEGOTIN</p>
+    
+    <div class="max-w-sm mx-auto mb-6">
+        <a href="https://www.google.com/maps/search/?api=1&query=Let%27s+Go+Negotin" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 text-sm opacity-70 mb-3 hover:text-amber-500 transition-colors">
+            <i class="fas fa-map-marker-alt text-amber-500"></i> <span id="addressText">Ivo Lole Ribara 5, Negotin</span>
+        </a>
+        <div class="rounded-xl p-3 border" style="background: var(--btnBg); border-color: var(--border)">
+            <div id="hoursMonFri" class="text-amber-500 text-[10px] font-black"></div>
+            <div id="hoursSat" class="text-xs opacity-70 mt-1"></div>
+            <div id="hoursSun" class="text-red-400 text-xs font-bold mt-1"></div>
+        </div>
+    </div>
+    
+    <div class="max-w-sm mx-auto space-y-3">
+        <a href="tel:+381611527047" class="flex items-center justify-center gap-3 bg-amber-500 text-black py-4 rounded-xl font-black text-lg active:scale-95 transition-transform">
+            <i class="fas fa-phone-alt"></i> <span>061 152 7047</span>
+        </a>
+    </div>
+</header>
+
+<div class="sticky-nav-group backdrop-blur-xl">
+    <nav class="border-b" style="border-color: var(--border)">
+        <div class="flex overflow-x-auto p-3 gap-2 no-scrollbar justify-start md:justify-center" id="langNav"></div>
+    </nav>
+    <div class="flex overflow-x-auto p-3 gap-2 no-scrollbar justify-start md:justify-center" id="tabBar"></div>
+</div>
+
+<main class="p-4 max-w-3xl mx-auto">
+    <div id="categoriesContainer"></div>
+</main>
+
+<section class="p-6 max-w-3xl mx-auto mt-8 text-center">
+    <div class="mb-4">
+        <h2 id="reviewTitle" class="font-black text-xl uppercase tracking-tight mb-2"></h2>
+        <p id="reviewDesc" class="text-sm font-bold mb-3 opacity-80"></p>
+        <div><i class="fas fa-chevron-down blink-arrow"></i></div>
+    </div>
+    <a href="https://maps.app.goo.gl/HbMuC9AD5t6zbpgz9?g_st=ic" target="_blank" rel="noopener" class="review-btn" id="reviewButton">
+        <p class="review-stars">★★★★★</p>
+        <p class="text-sm font-black uppercase" id="reviewBtnText"></p>
+        <p class="text-[10px] font-bold opacity-70" id="reviewSubtext"></p>
+    </a>
+</section>
+
+<footer class="py-8 border-t text-center px-5" style="border-color: var(--border)">
+    <div id="footerHours" class="text-[10px] font-bold uppercase tracking-wide mb-3 opacity-60"></div>
+    <p id="allergenText" class="text-[9px] font-bold uppercase tracking-wide leading-relaxed opacity-50"></p>
+    <p class="text-[8px] opacity-40 mt-4">© LET'S GO Negotin - Premium Street Food</p>
+</footer>
+
+<div id="toast" class="toast">LINK KOPIRAN!</div>
+
+<script>
+const translations = {
+    sr: {
+        lang: "🇷🇸 SRB", share: "PODELI MENI", toast: "LINK KOPIRAN!", open: "OTVORENO", closed: "ZATVORENO",
+        artisan: "DOMAĆE LEPINJE I PREMIUM SENDVIČI",
+        monFri: "PON - PET: 08:00 - 16:00", sat: "SUBOTA: 08:00 - 15:00", sun: "NEDELJA: NERADNA",
+        allergen: "UPOZORENJE: GLUTEN, JAJA, MLEKO, SUSAM",
+        reviewTitle: "HVALA ŠTO STE BIRALI LET'S GO!",
+        reviewDesc: "Ako vam se svidelo, ostavite nam zvezdice i komentar na Google-u.",
+        reviewBtn: "★★★★★ OCENI NAS",
+        reviewSubtext: "Vaša podrška je naš najbolji sastojak",
+        addr: "Ivo Lole Ribara 5, Negotin",
+        tags: { rec: "PREPORUKA", vege: "VEGE" },
+        cats: ["SVE", "SENDVIČI SA JAJIMA", "SPECIJALITETI", "PREMIUM MINI", "🍟 POMFRIT", "➕ DODACI", "🍯 SOSOVI", "🥤 PIĆA"]
+    },
+    en: {
+        lang: "🇬🇧 ENG", share: "SHARE MENU", toast: "LINK COPIED!", open: "OPEN", closed: "CLOSED",
+        artisan: "HOMEMADE FLATBREAD & PREMIUM SANDWICHES",
+        monFri: "MON - FRI: 08:00 - 16:00", sat: "SAT: 08:00 - 15:00", sun: "SUNDAY: CLOSED",
+        allergen: "ALLERGY: GLUTEN, EGGS, DAIRY, SESAME",
+        reviewTitle: "THANK YOU FOR CHOOSING LET'S GO!",
+        reviewDesc: "If you enjoyed it, leave us stars and a comment on Google.",
+        reviewBtn: "★★★★★ RATE US",
+        reviewSubtext: "Your support is our best ingredient",
+        addr: "5 Ivo Lole Ribara St, Negotin",
+        tags: { rec: "REC", vege: "VEGE" },
+        cats: ["ALL", "EGG SANDWICHES", "SPECIALITIES", "PREMIUM MINI", "🍟 FRIES", "➕ TOPPINGS", "🍯 SAUCES", "🥤 DRINKS"]
+    },
+    de: {
+        lang: "🇩🇪 DEU", share: "MENÜ TEILEN", toast: "LINK KOPIERT!", open: "OFFEN", closed: "GESCHLOSSEN",
+        artisan: "HAUSGEMACHTES FLADENBROT & PREMIUM SANDWICHES",
+        monFri: "MO - FR: 08:00 - 16:00", sat: "SA: 08:00 - 15:00", sun: "SO: GESCHLOSSEN",
+        allergen: "ALLERGENE: GLUTEN, EIER, MILCH, SESAM",
+        reviewTitle: "VIELEN DANK FÜR IHREN BESUCH!",
+        reviewDesc: "Wenn es Ihnen geschmeckt hat, bewerten Sie uns auf Google.",
+        reviewBtn: "★★★★★ BEWERTEN SIE UNS",
+        reviewSubtext: "Ihre Unterstützung ist unsere beste Zutaten",
+        addr: "Ivo Lole Ribara 5, Negotin",
+        tags: { rec: "EMPFEHLUNG", vege: "VEGGIE" },
+        cats: ["ALLE", "EIER-SANDWICHES", "SPEZIALITÄTEN", "PREMIUM MINI", "🍟 POMMES", "➕ EXTRAS", "🍯 SAUCEN", "🥤 GETRÄNKE"]
+    },
+    ro: {
+        lang: "🇷🇴 ROU", share: "TRIMITE MENIUL", toast: "LINK COPIAT!", open: "DESCHIS", closed: "INCHIS",
+        artisan: "LIPIDE DE CASĂ ȘI SANDVIȘURI PREMIUM",
+        monFri: "LUN - VIN: 08:00 - 16:00", sat: "SÂM: 08:00 - 15:00", sun: "DUM: ÎNCHIS",
+        allergen: "ALERGENI: GLUTEN, OUĂ, LACTEATE, SUSAN",
+        reviewTitle: "VĂ MULȚUMIM CĂ AȚI ALES LET'S GO!",
+        reviewDesc: "Dacă v-a plăcut, lăsați-ne o recenzie pe Google.",
+        reviewBtn: "★★★★★ EVALUAȚI-NE",
+        reviewSubtext: "Suportul dumneavoastră este cel mai bun ingredient",
+        addr: "Str. Ivo Lole Ribara 5, Negotin",
+        tags: { rec: "RECOMANDAT", vege: "VEGE" },
+        cats: ["TOATE", "SANDVIȘURI CU OUĂ", "SPECIALITĂȚI", "PREMIUM MINI", "🍟 CARTOFI PRĂJIȚI", "➕ EXTRA", "🍯 SOSURI", "🥤 BĂUTURI"]
+    },
+    bg: {
+        lang: "🇧🇬 BUL", share: "СПОДЕЛЕНИЕ", toast: "ВРЪЗКАТА Е КОПИРАНА!", open: "ОТВОРЕНО", closed: "ЗАТВОРЕНО",
+        artisan: "ДОМАШНИ ПИТКИ И ПРЕМИУМ САНДВИЧИ",
+        monFri: "ПОН - ПЕТ: 08:00 - 16:00", sat: "SЪБ: 08:00 - 15:00", sun: "НЕДЕЛЯ: ПОЧИВЕН ДЕН",
+        allergen: "АЛЕРГЕНИ: ГЛУТЕН, ЯЙЦА, МЛЯКО, сусам",
+        reviewTitle: "БЛАГОДАРИМ ВИ, ЧЕ Избрахте LET'S GO!",
+        reviewDesc: "Ако ви е харесало, оставете ни оценка в Google.",
+        reviewBtn: "★★★★★ ОЦЕНЕТЕ НИ",
+        reviewSubtext: "Вашата подкрепа е най-добрата ни съставка",
+        addr: "ул. Иво Лоле Рибара 5, Неготин",
+        tags: { rec: "ПРЕПОРЪКА", vege: "ВЕГЕ" },
+        cats: ["ВСИЧКИ", "САНДВИЧИ С ЯЙЦА", "СПЕЦИАЛИТЕТИ", "ПРЕМИУМ МИНИ", "🍟 ПЪРЖЕНИ КАРТОФИ", "➕ ДОБАВКИ", "🍯 СОСОВЕ", "🥤 НАПИТКИ"]
+    }
+};
+
+const rawMenuItems = {
+    jaja: [
+        { 
+            n: "GURMANSKI", g: "400g", p: 550,
+            d: {
+                sr: "Domaća pršuta, omelet od dva jaja, čedar sir, tartuf majo, rukola, paradajz",
+                en: "Homemade prosciutto, two-egg omelette, cheddar cheese, truffle mayo, arugula, tomato",
+                de: "Hausgemachter Schinken, Rührei aus 2 Eiern, Cheddar, Trüffel-Mayo, Rucola, Tomate",
+                ro: "Prosciutto de casă, omletă din două ouă, brânză cheddar, maioneză cu trufe, rucola, roșii",
+                bg: "Домашна прошуто, омлет от две яйца, сирене чедър, трюфелова майонеза, рукола, домати"
+            }
+        },
+        { 
+            n: "BOSS", g: "420g", p: 480,
+            d: {
+                sr: "Šunka, dva jaja, čedar sir, šampinjoni, LG sos, paradajz, zelena salata",
+                en: "Ham, two eggs, cheddar cheese, mushrooms, LG sauce, tomato, lettuce",
+                de: "Schinken, zwei Eier, Cheddar, Champignons, LG-Soße, Tomate, Kopfsalat",
+                ro: "Șuncă, două ouă, brânză cheddar, ciuperci, sos LG, roșii, salată verde",
+                bg: "Шунка, две яйца, сирене чедър, гъби, LG сос, домати, зелена салата"
+            }
+        },
+        { 
+            n: "BALKANSKI", g: "340g", p: 450,
+            d: {
+                sr: "Slanina, dva jaja, kačkavalj, pavlaka sa belim lukom, paradajz, krastavac",
+                en: "Bacon, two eggs, kachkaval cheese, garlic sour cream, tomato, cucumber",
+                de: "Speck, zwei Eier, Käse, Knoblauch-Sauerrahm, Tomate, Gurke",
+                ro: "Slănină, două ouă, cașcaval, smântână cu usturoi, roșii, castraveți",
+                bg: "Бекон, две яйца, кашкавал, заквасена сметана с чесън, домати, краставица"
+            }
+        },
+        { 
+            n: "LJUTI ĐAVO", g: "430g", p: 420,
+            d: {
+                sr: "Domaća kobasica, crni luk, dva jaja, čedar sir, LG chili sos, paradajz, krastavac, ljuta paprika",
+                en: "Local sausage, onion, two eggs, cheddar, LG chili sauce, tomato, cucumber, hot pepper",
+                de: "Hauswurst, Zwiebeln, zwei Eier, Cheddar, LG Chili-Soße, Tomate, Gurke, scharfe Paprika",
+                ro: "Cârnat de casă, ceapă, două ouă, cheddar, sos chili LG, roșii, castraveți, ardei iute",
+                bg: "Домашна наденица, лук, две яйца, чедър, LG чили сос, домати, краставица, люта чушка"
+            }
+        },
+        { 
+            n: "FIT", g: "350g", p: 400, tag: "vege",
+            d: {
+                sr: "Omlet od dva jaja, grilovano povrće, feta sir, paradajz, zelena salata, maslinovo ulje",
+                en: "Two-egg omelette, grilled vegetables, feta cheese, tomato, lettuce, olive oil",
+                de: "Rührei aus 2 Eiern, Gegrilltes Gemüse, Feta, Tomate, Kopfsalat, Olivenöl",
+                ro: "Omletă din două ouă, legume la grătar, brânză feta, roșii, salată verde, ulei de măsline",
+                bg: "Омлет от две яйца, зеленчуци на скара, сирене фета, домати, зелена салата, зехтин"
+            }
+        },
+        { 
+            n: "OMLEPINA", g: "310g", p: 300, tag: "vege",
+            d: {
+                sr: "Omlet od dva jaja, čedar sir, majonez, paradajz",
+                en: "Two-egg omelette, cheddar cheese, mayo, tomato",
+                de: "Rührei aus 2 Eiern, Cheddar, Mayonnaise, Tomate",
+                ro: "Omletă din două ouă, brânză cheddar, maioneză, roșii",
+                bg: "Омлет от две яйца, сирене чедър, майонеза, домати"
+            }
+        }
+    ],
+    specijaliteti: [
+        { 
+            n: "PLEĆKA", g: "410g", p: 450,
+            d: {
+                sr: "Dinstana svinjska plećka u belom vinu (150g), kačkavalj, hrskavi luk, kupus salata, kiseli krastavac",
+                en: "Pulled pork shoulder in white wine (150g), cheese, crispy onion, coleslaw, pickles",
+                de: "Geschmorte Schweineschulter in Weißwein (150g), Käse, Röstzwiebeln, Krautsalat, Essiggurke",
+                ro: "Ruladă de porc în vin alb (150g), cașcaval, ceapă crocantă, salată de varză, castraveți murați",
+                bg: "Задушена свинска плешка в бяло вино (150g), кашкавал, хрупкав лук, зелева салата, кисели краставички"
+            }
+        },
+        { 
+            n: "PILEĆI", g: "410g", p: 400,
+            d: {
+                sr: "Sočna cepkana piletina (150g), LG sos, kačkavalj, kupus salata, hrskavi luk, kiseli krastavac",
+                en: "Juicy pulled chicken (150g), LG sauce, cheese, coleslaw, crispy onion, pickles",
+                de: "Saftiges Hähnchenfleisch (150g), LG-Soße, Käse, Krautsalat, Röstzwiebeln, Essiggurke",
+                ro: "Pui fâșii suculent (150g), sos LG, cașcaval, salată de varză, ceapă crocantă, castraveți murați",
+                bg: "Сочно накъсано пилешко (150g), LG сос, кашкавал, зелева салата, хрупкав лук, кисели краставички"
+            }
+        }
+    ],
+    mini: [
+        { 
+            n: "PLEĆKA", g: "280g", p: 350,
+            d: {
+                sr: "Dinstana svinjska plećka (90g), kačkavalj, hrskavi luk, kupus salata, kiseli krastavac",
+                en: "Pulled pork shoulder (90g), cheese, crispy onion, coleslaw, pickles",
+                de: "Geschmorte Schweineschulter (90g), Käse, Röstzwiebeln, Krautsalat, Essiggurke",
+                ro: "Ruladă de porc (90g), cașcaval, ceapă crocantă, salată de varză, castraveți murați",
+                bg: "Задушена свинска плешка (90g), кашкавал, хрупкав лук, зелева салата, кисели краставички"
+            }
+        },
+        { 
+            n: "PILEĆI", g: "280g", p: 300,
+            d: {
+                sr: "Sočna cepkana piletina (90g), LG sos, kačkavalj, kupus salata, hrskavi luk, kiseli krastavac",
+                en: "Juicy pulled chicken (90g), LG sauce, cheese, coleslaw, crispy onion, pickles",
+                de: "Saftiges Hähnchenfleisch (90g), LG-Soße, Käse, Krautsalat, Röstzwiebeln, Essiggurke",
+                ro: "Pui fâșii suculent (90g), sos LG, cașcaval, salată de varză, ceapă crocantă, castraveți murați",
+                bg: "Сочно накъсано пилешко (90g), LG сос, кашкавал, зелева салата, хрупкав лук, кисели краставички"
+            }
+        },
+        { 
+            n: "ĐAČKI SENDVIČ", g: "260g", p: 250,
+            d: {
+                sr: "Šunka, kačkavalj, majonez, kečap, krastavac, zelena salata",
+                en: "Ham, cheese, mayo, ketchup, cucumber, lettuce",
+                de: "Schinken, Käse, Mayonnaise, Ketchup, Gurke, Kopfsalat",
+                ro: "Șuncă, cașcaval, maioneză, ketchup, castraveți, salată verde",
+                bg: "Шунка, кашкавал, майонеза, кечуп, краставица, зелена салата"
+            }
+        }
+    ],
+    pomfrit: [
+        { n: "KLASIČAN POMFRIT (MALI)", g: "150g", p: 180, d: { sr: "Hrskavi pomfrit", en: "Crispy french fries", de: "Knusprige Pommes", ro: "Cartofi prăjiți crocanti", bg: "Хрупкави пържени картофи" } },
+        { n: "KLASIČAN POMFRIT (VELIKI)", g: "250g", p: 250, d: { sr: "Hrskavi pomfrit", en: "Crispy french fries", de: "Knusprige Pommes", ro: "Cartofi prăjiți crocanti", bg: "Хрупкави пържени картофи" } },
+        { n: "SA ČEDAR SOSOM (MALI)", g: "210g", p: 230, d: { sr: "Pomfrit sa čedar sosom", en: "Fries with cheddar sauce", de: "Pommes mit Cheddar-Soße", ro: "Cartofi cu sos cheddar", bg: "Картофи с сос чедър" } },
+        { n: "SA ČEDAR SOSOM (VELIKI)", g: "310g", p: 300, d: { sr: "Pomfrit sa čedar sosom", en: "Fries with cheddar sauce", de: "Pommes mit Cheddar-Soße", ro: "Cartofi cu sos cheddar", bg: "Картофи с сос чедър" } },
+        { n: "ČEDAR + HRSKAVA SLANINA (MALI)", g: "260g", p: 270, d: { sr: "Pomfrit sa čedar sosom i slaninom", en: "Fries with cheddar & bacon", de: "Pommes mit Cheddar & Speck", ro: "Cartofi cu cheddar și slănină", bg: "Картофи с чедър и бекон" } },
+        { n: "ČEDAR + HRSKAVA SLANINA (VELIKI)", g: "370g", p: 370, d: { sr: "Pomfrit sa čedar sosom i slaninom", en: "Fries with cheddar & bacon", de: "Pommes mit Cheddar & Speck", ro: "Cartofi cu cheddar și slănină", bg: "Картофи с чедър и бекон" } }
+    ],
+    dodaci: [
+        { n: "DOMAĆA LEPINJA", p: 60, d: { sr: "Sveže pečena domaća lepinja", en: "Freshly baked homemade flatbread", de: "Frisch gebackenes Fladenbrot", ro: "Lipie de casă proaspătă", bg: "Прясно изпечена домашна питка" } },
+        { n: "DOMAĆA PRŠUTA", g: "50g", p: 300, d: { sr: "Domaća pršuta", en: "Homemade prosciutto", de: "Hausgemachter Schinken", ro: "Prosciutto de casă", bg: "Домашна прошуто" } },
+        { n: "SLANINA", g: "50g", p: 100, d: { sr: "Hrskava slanina", en: "Crispy bacon", de: "Knuspriger Speck", ro: "Slănină crocantă", bg: "Хрупкав бекон" } },
+        { n: "ŠUNKA", g: "50g", p: 80, d: { sr: "Šunka", en: "Ham", de: "Schinken", ro: "Șuncă", bg: "Шунка" } },
+        { n: "SIR / KAČKAVALJ", g: "50g", p: 80, d: { sr: "Kačkavalj", en: "Kachkaval cheese", de: "Käse", ro: "Cașcaval", bg: "Кашкавал" } },
+        { n: "ČEDAR SIR", g: "50g", p: 100, d: { sr: "Čedar sir", en: "Cheddar cheese", de: "Cheddar Käse", ro: "Brânză cheddar", bg: "Сирене чедър" } },
+        { n: "JAJE", g: "1kom", p: 50, d: { sr: "Jaje", en: "Egg", de: "Ei", ro: "Ou", bg: "Яйце" } },
+        { n: "ŠAMPINJONI", g: "30g", p: 50, d: { sr: "Grilovani šampinjoni", en: "Grilled mushrooms", de: "Gegrillte Champignons", ro: "Ciuperci la grătar", bg: "Гъби на скара" } }
+    ],
+    sosovi: [
+        { n: "TARTUF MAJO", g: "60ml", p: 80 },
+        { n: "ČEDAR SOS", g: "60ml", p: 80 },
+        { n: "MAJONEZ", g: "60ml", p: 20 },
+        { n: "KEČAP", g: "60ml", p: 20 },
+        { n: "LET'S GO SOS", g: "60ml", p: 50, d: { sr: "Majonez, med, beli luk", en: "Mayo, honey, garlic", de: "Mayo, Honig, Knoblauch", ro: "Maioneză, miere, usturoi", bg: "Майонеза, мед, чесън" } },
+        { n: "LET'S GO CHILI", g: "60ml", p: 50, d: { sr: "Majonez, med, beli luk, chili", en: "Mayo, honey, garlic, chili", de: "Mayo, Honig, Knoblauch, Chili", ro: "Maioneză, miere, usturoi, chili", bg: "Майонеза, мед, чесън, чили" } },
+        { n: "PAVLAKA-BELI LUK", g: "60ml", p: 50, d: { sr: "Pavlaka sa belim lukom", en: "Garlic sour cream", de: "Knoblauch-Sauerrahm", ro: "Smântână cu usturoi", bg: "Заквасена сметана с чесън" } }
+    ],
+    pica: [
+        { n: "PEPSI 0,5", p: 150 }, { n: "TUBE 0,5", p: 150 }, { n: "PEPSI 0,33", p: 130 },
+        { n: "PEPSI TWIST LIMUN 0,33", p: 130 }, { n: "PEPSI NO SUGAR 0,33", p: 130 },
+        { n: "IVI 0,33", p: 130 }, { n: "KNJAZ MILOŠ 0,5", p: 100 },
+        { n: "AQVA VIVA 0,5", p: 100 }, { n: "GUARANA 0,25", p: 150 }
+    ]
+};
+
+let currentLangCode = 'sr';
+let activeTabIndex = 0;
+
+function t() { return translations[currentLangCode]; }
+
+function isOpen() {
+    const d = new Date();
+    const time = d.getHours() * 100 + d.getMinutes();
+    const day = d.getDay(); 
+    if (day === 0) return false;
+    if (day === 6) return time >= 800 && time < 1500;
+    return time >= 800 && time < 1600;
+}
+
+function updateStatic() {
+    const lang = t();
+    const open = isOpen();
+    document.getElementById('statusDot').className = `status-dot ${open ? 'status-open' : 'status-closed'}`;
+    document.getElementById('statusText').innerText = open ? lang.open : lang.closed;
+    document.getElementById('artisanText').innerText = lang.artisan;
+    document.getElementById('hoursMonFri').innerHTML = lang.monFri;
+    document.getElementById('hoursSat').innerHTML = lang.sat;
+    document.getElementById('hoursSun').innerHTML = lang.sun;
+    document.getElementById('addressText').innerText = lang.addr;
+    document.getElementById('allergenText').innerText = lang.allergen;
+    document.getElementById('reviewTitle').innerText = lang.reviewTitle;
+    document.getElementById('reviewDesc').innerText = lang.reviewDesc;
+    document.getElementById('reviewBtnText').innerText = lang.reviewBtn;
+    document.getElementById('reviewSubtext').innerText = lang.reviewSubtext;
+    document.getElementById('footerHours').innerHTML = `${lang.monFri}<br>${lang.sat}<br>${lang.sun}`;
+}
+
+function renderLangNav() {
+    const container = document.getElementById('langNav');
+    container.innerHTML = Object.keys(translations).map(code => `
+        <button class="lang-btn ${currentLangCode === code ? 'active' : ''}" onclick="changeLanguage('${code}')">
+            ${translations[code].lang}
+        </button>
+    `).join('');
+}
+
+function renderTabs() {
+    const lang = t();
+    const container = document.getElementById('tabBar');
+    container.innerHTML = lang.cats.map((cat, i) => `
+        <button class="tab-btn ${i === activeTabIndex ? 'active' : ''}" onclick="setActiveTab(${i})">${cat}</button>
+    `).join('');
+}
+
+function renderCategories() {
+    const lang = t();
+    const allItems = [...rawMenuItems.jaja, ...rawMenuItems.specijaliteti, ...rawMenuItems.mini, ...rawMenuItems.pomfrit, ...rawMenuItems.dodaci, ...rawMenuItems.sosovi, ...rawMenuItems.pica];
+    const itemsMap = [allItems, rawMenuItems.jaja, rawMenuItems.specijaliteti, rawMenuItems.mini, rawMenuItems.pomfrit, rawMenuItems.dodaci, rawMenuItems.sosovi, rawMenuItems.pica];
+    
+    const container = document.getElementById('categoriesContainer');
+    container.innerHTML = lang.cats.map((_, idx) => {
+        const items = itemsMap[idx] || [];
+        return `<div class="category-panel ${idx === activeTabIndex ? 'active' : ''}">
+            <div class="grid gap-4">
+                ${items.map(item => {
+                    const badge = item.tag ? `<span class="badge badge-${item.tag}">${lang.tags[item.tag]}</span>` : '';
+                    let descText = '';
+                    if (item.d) {
+                        descText = typeof item.d === 'object' ? (item.d[currentLangCode] || item.d['sr'] || '') : item.d;
+                    }
+
+                    return `<div class="card">
+                        <div class="flex justify-between items-start">
+                            <div class="flex-1">
+                                <span class="font-black text-base uppercase">${item.n}</span>
+                                ${badge}${descText ? `<p class="text-xs mt-1 opacity-80 leading-relaxed">${descText}</p>` : ''}
+                                ${item.g ? `<span class="text-[10px] font-black opacity-50 block mt-1">${item.g}</span>` : ''}
+                            </div>
+                            <div class="price ml-4 whitespace-nowrap">${item.p} <span class="text-[10px]">RSD</span></div>
+                        </div>
+                    </div>`;
+                }).join('')}
+            </div>
+        </div>`;
+    }).join('');
+}
+
+function setActiveTab(idx) { 
+    activeTabIndex = idx; 
+    renderTabs(); 
+    renderCategories();
+    window.scrollTo({ top: document.querySelector('header').offsetHeight - 50, behavior: 'smooth' });
+}
+
+function changeLanguage(code) { 
+    currentLangCode = code; 
+    localStorage.setItem('menuLang', code); 
+    renderLangNav(); 
+    updateStatic(); 
+    renderTabs(); 
+    renderCategories(); 
+}
+
+async function shareMenu() {
+    const shareData = { title: "LET'S GO Negotin", text: "Pogledajte naš jelovnik!", url: window.location.href };
+    if (navigator.share) { try { await navigator.share(shareData); } catch(e) {} }
+    else {
+        navigator.clipboard.writeText(window.location.href);
+        const toast = document.getElementById('toast');
+        toast.classList.add('show'); setTimeout(() => toast.classList.remove('show'), 2000);
+    }
+}
+
+function toggleTheme() {
+    document.body.classList.toggle('light');
+    localStorage.setItem('menuTheme', document.body.classList.contains('light') ? 'light' : 'dark');
+    document.getElementById('themeIcon').className = document.body.classList.contains('light') ? 'fas fa-sun' : 'fas fa-moon';
+}
+
+(function init() {
+    const savedLang = localStorage.getItem('menuLang');
+    if (savedLang && translations[savedLang]) currentLangCode = savedLang;
+    if (localStorage.getItem('menuTheme') === 'light') document.body.classList.add('light');
+    document.getElementById('themeIcon').className = document.body.classList.contains('light') ? 'fas fa-sun' : 'fas fa-moon';
+    renderLangNav(); updateStatic(); renderTabs(); renderCategories();
+    setInterval(updateStatic, 60000);
+})();
+</script>
+</body>
+</html>
